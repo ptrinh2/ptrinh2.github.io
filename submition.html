@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+
+<style>
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+}
+</style>
+
+
+<style>
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #111;
+}
+.box{
+margin-left: 20px;
+margin-right:20px;
+margin-bottom:10px;
+margin-top:10px;
+background-color: silver;
+}
+</style>
+<meta charset="ISO-8859-1">
+<title>Mellow Mushroom</title>
+</head>
+
+
+<body style="background-color:red;">
+<div class="box">
+<ul>
+  <li><a href="http://ptrinh2.github.io/index.html">Home</a></li>
+  <li><a href="http://localhost:8080/jodf/OrderPage.html">Order</a></li>
+  <li><a href="http://localhost:8080/jodf/Fees.html">Fees</a></li>
+  <li><a href="http://localhost:8080/jodf/Catering.html">Catering</a></li>
+</ul>
+    <h1>Checkout Page</h1>
+
+
+
+
+<div id="orderContent">
+    <p><strong>Number of Items in Cart: </strong></p>
+        <form>
+            <label id="itemName"></label>
+            <input type="text" id="amountUpdate" style="width: 10px;"><br><br>
+            Note: <input id="noteUpdate"></label>
+            <button id="updateBtn" onclick="updateFunc()">Update Item</button>
+        </form>
+        <script>
+            document.getElementById('itemName').innerHTML = sessionStorage.getItem('Name');
+            document.getElementById('amountUpdate').value = sessionStorage.getItem('Amount');
+            document.getElementById('noteUpdate').value = sessionStorage.getItem('Request');
+        </script>	
+
+
+
+    <p><strong>Total price with fees: </strong></p>
+    <script>
+    var a = parseFloat(sessionStorage.getItem('Price'));
+        if(a < 20.00){
+            a = a + 7.50;
+        }
+        else if(a > 20.00 && a < 40.00){
+            a = a + 4.50;
+        }
+        else{
+            a = a + 2.99;
+        }
+    sessionStorage.setItem('Total',a); 
+     document.write("$" + sessionStorage.getItem('Total'));
+    </script>
+
+    <p><i>Leave the 'Debit/Credit Card field' blank if you want to pay in cash</i></p><br>
+    <form>
+    	Debit/Credit Card:
+    	<input type ="text" name="Credit Card" id="crdit"><br>
+    	Street Address:
+    	<input type ="text" name="Address" id="address">
+    	City:
+    	<input type = "text" name = "City" id="city">
+    	Zip:
+    	<input type = "text" name = "Zip" id="zip"><br>
+     <script type="text/javascript">
+         
+     </script>   
+    	
+    </form>
+
+
+
+
+
+
+
+    <p><br></p>
+
+        
+        
+    <p><b>Suggested Tip: </b></p> 
+<script type="text/javascript">
+    var a = parseFloat(sessionStorage.getItem('Price'))
+    var t = a*0.15;
+    sessionStorage.setItem('Tip',t);
+    document.write("$" + t + " (15% of your total)");
+</script>
+<br><br>
+</div>
+<div id="submitContent" style="display: none">
+    <h2>Summary of your order:</h2>
+    <form>
+        <p id="itemReview"></p>
+        <p id="noteReview"></p>
+        <p>------------------------------</p>
+        Total: $<label id="totalReview"></label>
+        <br><br>
+        Payment: <label id="paymentReview"></label>
+        <br><br>
+        Delivery Address: <label id="addressReview"></label>
+        <br><br>
+    </form>
+    <button id="edit" onclick="editFunc()">Edit order</button><br>
+    <form>
+        <input class = "dropbtn" type="button" id="submitBtn" value = "Submit Order" onclick="submitFunc()">
+        <input class = "dropbtn" type="button" id="cancelBtn" value = "Start Over" onclick="cancelFunc()">
+    </form>
+</div>
+<div id="finalPage" style="display: none">
+    <h3>Thank you! your order has been successfully submitted!<h3>
+    <form method="post" action = "http://ptrinh2.github.io/OrderPage.html">
+        <input type="submit" class="dropbtn" value="Make another order">
+    </form>
+</div>
+<button class="dropbtn" id="confirmBtn" onclick="confirmOrderFunc()" > Confirm Order</button>
+
+<script type="text/javascript" src="https://rawgit.com/ptrinh2/ptrinh2.github.io/master/script.js">
+    
+</script>
+
+
+</div>
+</body>
+</html>

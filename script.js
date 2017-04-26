@@ -99,7 +99,7 @@ function submitFunc(){
 
 function cancelFunc(){
 	if(confirm("Cancel current order and start orver?") == true){
-		window.location.assign("file:///Users/phtrinh/Downloads/jodf/MellowMushroomMenu.html")
+		window.location.assign("http://ptrinh2.github.io/MellowMushroomMenu.html")
 	}
 }
 
