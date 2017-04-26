@@ -42,7 +42,7 @@ function addFunc(){
 }
 
 function proceedCheckout(){
-	window.location.assign("http://ptrinh2.github.io/submittion.html")
+	window.location.assign("http://ptrinh2.github.io/submition.html")
 }
 function confirmOrderFunc(){
 
