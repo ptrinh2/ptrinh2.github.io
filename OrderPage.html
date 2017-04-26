@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<style>
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+}
+</style>
+
+
+
+
+
+<style>
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #111;
+}
+.box{
+margin-left: 20px;
+margin-right:20px;
+margin-bottom:10px;
+margin-top:10px;
+background-color: silver;
+}
+</style>
+
+
+
+
+<meta charset="ISO-8859-1">
+<title>Order</title>
+</head>
+<body onload="checkCart();" style="background-color:red;">
+<div class="box">
+<ul>
+  <li><a href="file:///Users/phtrinh/Downloads/jodf/HomePage.html">Home</a></li>
+  <li><a href="http://localhost:8080/jodf/OrderPage.html">Order</a></li>
+  <li><a href="http://localhost:8080/jodf/Fees.html">Fees</a></li>
+  <li><a href="http://localhost:8080/jodf/Catering.html">Catering</a></li>
+</ul>
+<ul>
+  <li><a href="http://localhost:8080/jodf/HomePage.html">Home Page</a></li>
+  <li><a href="file:///Users/phtrinh/Downloads/jodf/OrderPage.html">Order Page</a></li>
+</ul>
+<h1>
+Metro Dining Delivery
+</h1>
+<br>
+<h1>Restaurant Selection
+</h1>
+<p>
+-Choose between partnered restaurants (no added fees) and non-partnered restaurants.<br>
+-All Non-partnered Restaurants have a 15% service fee added to the total.<br>
+-All added fees will be shown on the confirmation page for each order.<br>
+-To order several items, simply select them from the menu and they are added to the cart.<br>
+-If you select the wrong item, use the clear option to clear all items from the cart.
+</p>
+<div id="partner" class="dropdown">
+<button onclick="myFunction()" class="dropbtn">Partnered Restaurants</button>
+  <div id="myDropdown" class="dropdown-content">
+    <a href="http://localhost:8080/jodf/HomePage.html">Ajora Falls</a>
+    <a href="http://localhost:8080/jodf/HomePage.html">Ali Baba Gyros</a>
+    <a href="http://localhost:8080/jodf/HomePage.html">Asian Fusion</a>
+    <a href="http://localhost:8080/jodf/HomePage.html">Buffalo Wings And Rings</a>
+    <a href="http://localhost:8080/jodf/HomePage.html">Dickey's Barbecue Pit</a>
+    <a onclick="mellowFunc()" href="file:///Users/phtrinh/Downloads/jodf/MellowMushroomMenu.html">Mellow Mushroom</a>
+    <a href="http://localhost:8080/jodf/HomePage.html">Misty's</a>
+        <a href="http://localhost:8080/jodf/HomePage.html">Yia Yia's</a>
+  </div>
+</div>
+
+<div id="non_partner" class="dropdown">
+<button onclick="myFunction()" class="dropbtn">Non-Partnered Restaurants</button>
+  <div id="myDropdown" class="dropdown-content">
+    <a href="http://localhost:8080/jodf/HomePage.html">12th Street Pub</a>
+    <a href="http://localhost:8080/jodf/HomePage.html">Amigos/Kings Classic</a>
+    <a href="http://localhost:8080/jodf/HomePage.html">Arby's</a>
+    <a href="http://localhost:8080/jodf/HomePage.html">Burger King</a>
+    <a href="http://localhost:8080/jodf/HomePage.html">daVincis</a>
+    <a href="http://localhost:8080/jodf/HomePage.html">Hiro 88</a>
+    <a href="http://localhost:8080/jodf/HomePage.html">The Mill</a>
+        <a href="http://localhost:8080/jodf/HomePage.html">Panda Express</a>
+  </div>
+</div>
+<div id="all" class="dropdown">
+<button onclick="myFunction()" class="dropbtn">All Restaurants</button>
+  <div id="myDropdown" class="dropdown-content">
+    <a href="http://localhost:8080/jodf/HomePage.html">Ajora Falls</a>
+    <a href="http://localhost:8080/jodf/HomePage.html">Ali Baba Gyros</a>
+    <a href="http://localhost:8080/jodf/HomePage.html">Asian Fusion</a>
+    <a href="http://localhost:8080/jodf/HomePage.html">Buffalo Wings And Rings</a>
+    <a href="http://localhost:8080/jodf/HomePage.html">Dickey's Barbecue Pit</a>
+    <a href="http://localhost:8080/jodf/HomePage.html">Mellow Mushroom</a>
+    <a href="http://localhost:8080/jodf/HomePage.html">Misty's</a>
+        <a href="http://localhost:8080/jodf/HomePage.html">Yia Yia's</a>
+            <a href="http://localhost:8080/jodf/HomePage.html">12th Street Pub</a>
+    <a href="http://localhost:8080/jodf/HomePage.html">Amigos/Kings Classic</a>
+    <a href="http://localhost:8080/jodf/HomePage.html">Arby's</a>
+    <a href="http://localhost:8080/jodf/HomePage.html">Burger King</a>
+    <a href="http://localhost:8080/jodf/HomePage.html">daVincis</a>
+    <a href="http://localhost:8080/jodf/HomePage.html">Hiro 88</a>
+    <a href="http://localhost:8080/jodf/HomePage.html">The Mill</a>
+        <a href="http://localhost:8080/jodf/HomePage.html">Panda Express</a>
+
+  </div>
+
+</div>
+
+
+<script type="text/javascript" src = "file:///Users/phtrinh/Downloads/jodf/script.js">
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+
+</script>
+</div>
+</body>
+</html>
