@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<style>
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+}
+.whiteBox{
+    background-color: white;
+    width: 500px;
+    margin-left: 5px;
+}
+</style>
+
+
+<style>
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #111;
+}
+.box{
+margin-left: 20px;
+margin-right:20px;
+margin-bottom:10px;
+margin-top:10px;
+background-color: silver;
+}
+</style>
+<meta charset="ISO-8859-1">
+<title>Metro Dining HomePage</title>
+</head>
+<body style="background-color:red;">
+<div class="box">
+<ul>
+  <li><a href="http://localhost:8080/jodf/HomePage.html">Home</a></li>
+  <li><a href="http://localhost:8080/jodf/OrderPage.html">Order</a></li>
+  <li><a href="http://localhost:8080/jodf/Fees.html">Fees</a></li>
+  <li><a href="http://localhost:8080/jodf/Catering.html">Catering</a></li>
+</ul>
+<ul>
+  <li><a href="http://localhost:8080/jodf/HomePage.html">Home Page</a></li>
+  <li><a href="file:///Users/phtrinh/Downloads/jodf/OrderPage.html">Order Page</a></li>
+  <li><a href="http://localhost:8080/jodf/MellowMushroomMenu.html">Mellow Mushroom Menu</a></li>
+</ul>
+<h1>Mellow Mushroom</h1>
+<a href = "http://metrodiningdelivery.com/menus/mellow_mushroom_pizza_menu_lincoln_nebraska.html">Printable Menu</a>
+
+<br>
+<div class="dropdown">
+<button onclick="myFunction()" class="dropbtn">Food Category</button>
+  <div id="myDropdown" class="dropdown-content">
+    <a onclick="mellowFunc()">Calzones</a>
+    <a href="http://localhost:8080/jodf/Pizzas.html">Specialty Pizzas</a>
+    <a href="http://localhost:8080/jodf/Salads.html">Salads</a>
+    <a href="http://localhost:8080/jodf/Hoagies.html">Hoagies</a>
+  </div>
+</div>
+
+<div class="dropdown">
+<button onclick="myFunction()" class="dropbtn" id="calzones" style="display: none">Calzones</button>
+  <div id="myDropdown" class="dropdown-content">
+    <a onclick="cheeseFunc()">Cheese</a>
+    <a href="http://localhost:8080/jodf/HouseCalzone.html">House</a>
+    <a href="http://localhost:8080/jodf/ChickenCalzone.html">Steak or Chicken With Cheese</a>
+  </div>
+</div>
+
+<div id="cheeseContent" style="display: none;">
+    <p id="name"></p>
+    <p><strong>Cheese Calzone</strong></p>
+    <p>Price: $7.99/each</p><br>
+    <form>
+    Amount:
+    <br>
+    <input id="cheeseAmount" type ="text" name="amount">
+    <br>
+    Requests: <br>
+    <input id="request" type = "text"><br><br>
+    </form>
+    <button onclick="addFunc()">Add to cart</button>
+
+</div>
+
+<div id="cart" class="whiteBox">
+<p><strong>Your Cart:</strong></p>
+    <p id="total_price">---Empty---</p><span id="cus_request" style="display: inline-block;"></span>
+
+
+
+</div>
+<form id = "checkout_btn" method = "post" action="file:///Users/phtrinh/Downloads/jodf/submition.html" style="display: none;">
+    <input type="submit" name="checkoutButton" value ="Proceed to Checkout" onclick="proceedCheckout()"/>
+</form>
+<button id="add_other_item" style="display: none;"> Add Another Item</button>
+
+
+
+
+
+<script type="text/javascript" src = "file:///Users/phtrinh/Downloads/jodf/script.js">
+
+</script>
+<p>601 R Street, #110<br>
+Lincoln, NE, 68508<br>
+(402) 261-3362<br>
+Sun-Thur 11am-10pm<br>
+Fri-Sat 11am-12am
+</p>
+</div>
+</body>
+</html>
