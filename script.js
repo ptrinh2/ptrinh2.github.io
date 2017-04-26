@@ -124,4 +124,6 @@ function updateFunc(){
 
 
 }
-
+function makeAnotherOrderFunc(){
+	window.location.assign("http://ptrinh2.github.io/OrderPage.html")
+}
